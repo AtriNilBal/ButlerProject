@@ -8,21 +8,21 @@ stage('Build')
 {
 steps
 {
-    mvn clean
+    bat "mvn clean"
 }
 
 }
 stage('deploy')
 {
 steps{
-echo 'deploying the code'
+bat "echo 'deploying the code'"
 }
 
 }
 stage('test')
 {
 steps{
-    mvn test
+    bat "mvn test"
 }
 
 }
@@ -30,7 +30,7 @@ steps{
 stage('Unit Testing')
 {
 steps{
-    mvn compile
+    bat "mvn compile"
 }
 
 }
@@ -40,7 +40,7 @@ when{
 branch "origin/master"
 }
 steps{
-echo 'releasing the project'
+	bat "echo 'releasing the project'"
 }
 
 }
