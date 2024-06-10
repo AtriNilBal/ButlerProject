@@ -11,8 +11,10 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <java.version>17</java.version>
         <surefire.version>3.2.5</surefire.version>
         <compiler.version>3.12.1</compiler.version>
+        <lombok.version>1.18.32</lombok.version>
         <cucumber.version>6.9.0</cucumber.version>
         <junit.version>5.10.2</junit.version>
         <testng.version>6.14.3</testng.version>
@@ -27,9 +29,13 @@
                     <artifactId>maven-compiler-plugin</artifactId>
                     <version>${compiler.version}</version>
                     <configuration>
-                        <encoding>UTF-8</encoding>
-                        <source>${java.version}</source>
-                        <target>${java.version}</target>
+                        <annotationProcessorPaths>
+                            <path>
+                                <groupId>org.projectlombok</groupId>
+                                <artifactId>lombok</artifactId>
+                                <version>${lombok.version}</version>
+                            </path>
+                        </annotationProcessorPaths>
                     </configuration>
                 </plugin>
                 <plugin>
